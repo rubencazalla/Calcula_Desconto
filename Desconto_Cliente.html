@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Desconto Cliente</title>
+</head>
+<body>
+	<script >
+		/*
+		################################################################################################################
+		|	Dependendo do valor das compras, a loja LuDas concede descontos aos seus clientes.
+		|	Crie uma função que calcule um desconto de 10% para compras de até R$499,99 e de 15% para valores acima  
+		|	disso.
+		|	A função deve retornar o percentual de desconto, valor do desconto em reais e o valor final a ser pago.
+		|	Suba o código para sua conta no GitHub e compartilhe o link desse projeto no campo ao lado para que 
+		|	outros desenvolvedores possam analisá-lo.
+		################################################################################################################
+		*/
+		var aPagar	=calculaDesconto(prompt("Informe o valor da Compra"));
+	
+
+		function calculaDesconto(valor){
+			var Perc 	=0;
+			var desconto=0;
+			var valorB = valor;
+			var valorL	=0;
+			
+			if(!isNaN(valor)=== true ){	
+				
+				if(valorB<=499.99){
+					
+					Perc=0.90;
+					valorL=valorB*Perc;
+
+				}else{
+					
+					Perc=0.85;
+					valorL=valorB*Perc;
+				}
+				return "O Percentual Desconto: "+((1-Perc)*100).toFixed(2)+"%"+",<br> Valor Desconto: "+(valorB-valorL).toFixed(2)+"<br>Valor a Pagar: "+valorL;
+			}else{
+				return("O informado não é numero");
+			}
+
+		}
+
+		document.write(aPagar);
+		
+	</script>
+
+</body>
+</html>
